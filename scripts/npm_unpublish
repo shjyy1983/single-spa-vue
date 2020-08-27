@@ -1,0 +1,20 @@
+# 发布确认
+read -p "是取消某个版本发布？(y/n): " check
+
+if [ "$check"x == 'y'x ]
+then
+  echo '继续..'
+else
+  echo '退出'
+  exit 0
+fi
+
+read -p "输入版本: " version
+echo "$version"
+if [ -z "$version" ]; then
+  echo '输入版本为空，退出。'
+  exit 0
+else
+  echo 正在取消发布版本：@shenorg/ss_cli@"$version"
+  npm unpublish @shenorg/ss_cli@"$version"
+fi

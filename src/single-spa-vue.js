@@ -149,6 +149,7 @@ function update(opts, mountedInstances, props) {
 }
 
 function unmount(opts, mountedInstances, props) {
+  console.log("------- unmount -------");
   return Promise.resolve().then(() => {
     const instance = mountedInstances[props.name];
     if (opts.createApp) {
